@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/categories/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/linux/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/markdown/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/notes/md2word/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/notes/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/</loc>
+    <lastmod>2020-01-04T01:28:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/about/</loc>
+    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</loc>
+    <lastmod>2020-01-04T00:01:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/</loc>
+    <lastmod>2020-01-04T00:01:57+01:00</lastmod>
+  </url>
+  
+</urlset>

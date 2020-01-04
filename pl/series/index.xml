@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Robert Lewandowski</title>
+    <link>https://rl89pl.github.io/pl/series/</link>
+    <description>Recent content in Series on Robert Lewandowski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <managingEditor>rl89@interia.pl (Robert Lewandowski)</managingEditor>
+    <webMaster>rl89@interia.pl (Robert Lewandowski)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 04 Jan 2020 01:28:26 +0100</lastBuildDate>
+    
+        <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+    
+  </channel>
+</rss>

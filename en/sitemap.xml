@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://rl89pl.github.io/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/en/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/tags/"
+                />
+  </url>
+  
+</urlset>
