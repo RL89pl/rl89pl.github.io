@@ -9,12 +9,21 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 23:42:30 +0100</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Windows</title>
+        <link>https://rl89pl.github.io/pl/tags/windows/</link>
+        <pubDate>Sun, 05 Jan 2020 23:42:30 +0100</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/windows/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>Python</title>

@@ -9,6 +9,60 @@
 	"content": ""
 },
 {
+	"uri": "https://rl89pl.github.io/pl/notes/wifi_pswd/",
+	"title": "Hasła do wifi",
+	"tags": ["Windows"],
+	"categories": [],
+	"series": [""],
+	"description": "Sprawdzenie zapisanych haseł do sieci WiFi",
+	"content": "Zdarza się, że potrzebujemy hasło do sieci wifi, do której się wcześniej logowaliśmy, by móc zalogować się np. w telefonie, ale nie pamiętamy hasła.\nRozwiązanie pod Windowsa jest bardzo proste. Jedyne czego potrzebujemy to cmd.\nW terminalu wpisujemy poniższe polecenie:\nnetsh wlan show profiles\rOtrzymamy listę zapisanych sieci:\nNastępnie wpisujemy poniższe polecenie, gdzie zamiast NAZWA_SIECI podajemy interesującą nas sieć:\nnetsh wlan show profiles name=NAZWA_SIECI key=clear\rNasze hasło zapisane jest pod Key Content:\n"
+},
+{
+	"uri": "https://rl89pl.github.io/pl/notes/",
+	"title": "Notatki",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Notatki",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/",
+	"title": "Robert Lewandowski",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/series/",
+	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/",
+	"title": "Tags",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/windows/",
+	"title": "Windows",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://rl89pl.github.io/pl/posts/raspberry_ip/",
 	"title": "IP mojego RaspberryPi",
 	"tags": ["Raspberry", "Python"],
@@ -36,35 +90,8 @@
 	"content": ""
 },
 {
-	"uri": "https://rl89pl.github.io/pl/",
-	"title": "Robert Lewandowski",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/series/",
-	"title": "Series",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://rl89pl.github.io/pl/categories/skrypty/",
 	"title": "Skrypty",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/tags/",
-	"title": "Tags",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -106,15 +133,6 @@
 	"series": [""],
 	"description": "Generowanie dokumentu docx (Word) z pliku md (Markdown)",
 	"content": "By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).\nW terminalu wpisujemy poniższe polecenie:\n1  pandoc -o output.docx -f markdown -t docx filename.md\r  "
-},
-{
-	"uri": "https://rl89pl.github.io/pl/notes/",
-	"title": "Notatki",
-	"tags": ["index"],
-	"categories": [],
-	"series": [],
-	"description": "Notatki",
-	"content": ""
 },
 {
 	"uri": "https://rl89pl.github.io/pl/about/",

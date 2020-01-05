@@ -9,12 +9,26 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 23:42:30 +0100</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Hasła do wifi</title>
+        <link>https://rl89pl.github.io/pl/notes/wifi_pswd/</link>
+        <pubDate>Sun, 05 Jan 2020 23:42:30 +0100</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/notes/wifi_pswd/</guid>
+        <description>Zdarza się, że potrzebujemy hasło do sieci wifi, do której się wcześniej logowaliśmy, by móc zalogować się np. w telefonie, ale nie pamiętamy hasła.
+Rozwiązanie pod Windowsa jest bardzo proste. Jedyne czego potrzebujemy to cmd.
+W terminalu wpisujemy poniższe polecenie:
+netsh wlan show profilesOtrzymamy listę zapisanych sieci:
+Następnie wpisujemy poniższe polecenie, gdzie zamiast NAZWA_SIECI podajemy interesującą nas sieć:
+netsh wlan show profiles name=NAZWA_SIECI key=clearNasze hasło zapisane jest pod Key Content:</description>
+      </item>
       
       <item>
         <title>IP mojego RaspberryPi</title>
