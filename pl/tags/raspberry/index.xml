@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wpisy on Robert Lewandowski</title>
-    <link>https://rl89pl.github.io/pl/posts/</link>
-    <description>Recent content in Wpisy on Robert Lewandowski</description>
+    <title>Raspberry on Robert Lewandowski</title>
+    <link>https://rl89pl.github.io/pl/tags/raspberry/</link>
+    <description>Recent content in Raspberry on Robert Lewandowski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <managingEditor>rl89@interia.pl (Robert Lewandowski)</managingEditor>
@@ -11,7 +11,7 @@
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
     
-        <atom:link href="https://rl89pl.github.io/pl/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://rl89pl.github.io/pl/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -24,18 +24,6 @@
         <guid>https://rl89pl.github.io/pl/posts/raspberry_ip/</guid>
         <description>Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Bez statycznego IP, ciężko jest wyszukać adres urządzenia, gdy nieoczekiwanie nastąpi restart, albo chwilowe rozłączenie z siecią. Jednym z wielu rozwiązań, będzie automat wysyłający SMSem swój adres IP. Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się z moim Raspberry, nie zastanawiając się jakie ma IP.
 Potrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do wysyłania SMSów najlepszą opcją będzie Nexmo</description>
-      </item>
-      
-      <item>
-        <title>Mój pierwszy wpis</title>
-        <link>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</link>
-        <pubDate>Sat, 04 Jan 2020 00:01:57 +0100</pubDate>
-        <author>rl89@interia.pl (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</guid>
-        <description>Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)
-Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które kiedyś może się przydać.
- &amp;ldquo;Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery” - Abraham Lincoln
-  &amp;ldquo;Kto nie ma pamięci, ten niech ją sobie stworzy na papierze.</description>
       </item>
       
     

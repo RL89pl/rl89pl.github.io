@@ -9,6 +9,78 @@
 	"content": ""
 },
 {
+	"uri": "https://rl89pl.github.io/pl/posts/raspberry_ip/",
+	"title": "IP mojego RaspberryPi",
+	"tags": ["Raspberry", "Python"],
+	"categories": [],
+	"series": [""],
+	"description": "Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Potrzebuję tylko IP. Jednym z wielu rozwiązań, będzie automat wysyłający go SMSem",
+	"content": "Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Bez statycznego IP, ciężko jest wyszukać adres urządzenia, gdy nieoczekiwanie nastąpi restart, albo chwilowe rozłączenie z siecią. Jednym z wielu rozwiązań, będzie automat wysyłający SMSem swój adres IP. Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się z moim Raspberry, nie zastanawiając się jakie ma IP.\nPotrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do wysyłania SMSów najlepszą opcją będzie Nexmo\nSkrypt Python 1 2 3 4 5 6 7 8 9  import netifaces as ni\rimport nexmo\rclient = nexmo.Client(key=\u0026#39;klucz\u0026#39;, secret=\u0026#39;kod\u0026#39;)\ra = ni.ifaddresses(\u0026#39;tap0\u0026#39;)\rfor c, d in a.items():\rfor z in d:\radres = z[\u0026#39;addr\u0026#39;]\rif \u0026#39;.\u0026#39; in adres:\rclient.send_message({\u0026#39;from\u0026#39;: \u0026#39;Raspberry\u0026#39;, \u0026#39;to\u0026#39;: 48123456789, \u0026#39;text\u0026#39;: adres, \u0026#39;type\u0026#39;: \u0026#39;unicode\u0026#39;})\r  Następnie dodaję do crona odpowiednie zadania. Dzięki pierwszemu wpisowi, po restarcie łączy się z odpowiednim VPNem, a drugi uruchamia minutę po restarcie powyższy skrypt.\nZadania cron 1 2  @reboot sudo openvpn --config /etc/default/plik_vpn.ovpn\r@reboot sleep 60 \u0026amp;\u0026amp; /usr/bin/python3 /root/Desktop/Skrypty/send_ip.py\r  "
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/python/",
+	"title": "Python",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/raspberry/",
+	"title": "Raspberry",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/",
+	"title": "Robert Lewandowski",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/series/",
+	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/categories/skrypty/",
+	"title": "Skrypty",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/",
+	"title": "Tags",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/posts/",
+	"title": "Wpisy",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Strona z wpisami",
+	"content": ""
+},
+{
 	"uri": "https://rl89pl.github.io/pl/tags/linux/",
 	"title": "Linux",
 	"tags": [],
@@ -33,7 +105,7 @@
 	"categories": [],
 	"series": [""],
 	"description": "Generowanie dokumentu docx (Word) z pliku md (Markdown)",
-	"content": "By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).\nW terminalu wpisujemy poniższe polecenie:\n1  pandoc -o output.docx -f markdown -t docx filename.md   "
+	"content": "By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).\nW terminalu wpisujemy poniższe polecenie:\n1  pandoc -o output.docx -f markdown -t docx filename.md\r  "
 },
 {
 	"uri": "https://rl89pl.github.io/pl/notes/",
@@ -42,33 +114,6 @@
 	"categories": [],
 	"series": [],
 	"description": "Notatki",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/",
-	"title": "Robert Lewandowski",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/series/",
-	"title": "Series",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/tags/",
-	"title": "Tags",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
 	"content": ""
 },
 {
@@ -88,13 +133,4 @@
 	"series": [""],
 	"description": "Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)",
 	"content": "Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)\nDział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które kiedyś może się przydać.\n \u0026ldquo;Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery” - Abraham Lincoln\n  \u0026ldquo;Kto nie ma pamięci, ten niech ją sobie stworzy na papierze.\u0026rdquo; - Gabriel Garcia Marquez\n "
-},
-{
-	"uri": "https://rl89pl.github.io/pl/posts/",
-	"title": "Wpisy",
-	"tags": ["index"],
-	"categories": [],
-	"series": [],
-	"description": "Strona z wpisami",
-	"content": ""
 }]

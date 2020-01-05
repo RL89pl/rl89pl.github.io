@@ -9,12 +9,30 @@
     <managingEditor>rl89@interia.pl (Robert Lewandowski)</managingEditor>
     <webMaster>rl89@interia.pl (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 01:28:26 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Python</title>
+        <link>https://rl89pl.github.io/pl/tags/python/</link>
+        <pubDate>Sun, 05 Jan 2020 00:34:30 +0100</pubDate>
+        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/python/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Raspberry</title>
+        <link>https://rl89pl.github.io/pl/tags/raspberry/</link>
+        <pubDate>Sun, 05 Jan 2020 00:34:30 +0100</pubDate>
+        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/raspberry/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>Linux</title>

@@ -9,12 +9,22 @@
     <managingEditor>rl89@interia.pl (Robert Lewandowski)</managingEditor>
     <webMaster>rl89@interia.pl (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 01:28:26 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>IP mojego RaspberryPi</title>
+        <link>https://rl89pl.github.io/pl/posts/raspberry_ip/</link>
+        <pubDate>Sun, 05 Jan 2020 00:34:30 +0100</pubDate>
+        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/raspberry_ip/</guid>
+        <description>Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Bez statycznego IP, ciężko jest wyszukać adres urządzenia, gdy nieoczekiwanie nastąpi restart, albo chwilowe rozłączenie z siecią. Jednym z wielu rozwiązań, będzie automat wysyłający SMSem swój adres IP. Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się z moim Raspberry, nie zastanawiając się jakie ma IP.
+Potrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do wysyłania SMSów najlepszą opcją będzie Nexmo</description>
+      </item>
       
       <item>
         <title>Markdown do Worda</title>
@@ -24,7 +34,7 @@
         <guid>https://rl89pl.github.io/pl/notes/md2word/</guid>
         <description>By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).
 W terminalu wpisujemy poniższe polecenie:
-1  pandoc -o output.docx -f markdown -t docx filename.md   </description>
+1  pandoc -o output.docx -f markdown -t docx filename.md  </description>
       </item>
       
       <item>
