@@ -6,8 +6,8 @@
     <description>Recent content on Robert Lewandowski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
-    <managingEditor>rl89@interia.pl (Robert Lewandowski)</managingEditor>
-    <webMaster>rl89@interia.pl (Robert Lewandowski)</webMaster>
+    <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
+    <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 05 Jan 2020 00:34:30 +0100</lastBuildDate>
     
@@ -20,7 +20,7 @@
         <title>IP mojego RaspberryPi</title>
         <link>https://rl89pl.github.io/pl/posts/raspberry_ip/</link>
         <pubDate>Sun, 05 Jan 2020 00:34:30 +0100</pubDate>
-        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/posts/raspberry_ip/</guid>
         <description>Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Bez statycznego IP, ciężko jest wyszukać adres urządzenia, gdy nieoczekiwanie nastąpi restart, albo chwilowe rozłączenie z siecią. Jednym z wielu rozwiązań, będzie automat wysyłający SMSem swój adres IP. Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się z moim Raspberry, nie zastanawiając się jakie ma IP.
 Potrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do wysyłania SMSów najlepszą opcją będzie Nexmo</description>
@@ -30,7 +30,7 @@ Potrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do 
         <title>Markdown do Worda</title>
         <link>https://rl89pl.github.io/pl/notes/md2word/</link>
         <pubDate>Sat, 04 Jan 2020 01:28:26 +0100</pubDate>
-        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/notes/md2word/</guid>
         <description>By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).
 W terminalu wpisujemy poniższe polecenie:
@@ -41,7 +41,7 @@ W terminalu wpisujemy poniższe polecenie:
         <title>O mnie</title>
         <link>https://rl89pl.github.io/pl/about/</link>
         <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
-        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/about/</guid>
         <description>To miejsce czeka na uzupełnienie.
 Link do GH GitHub.</description>
@@ -51,7 +51,7 @@ Link do GH GitHub.</description>
         <title>Mój pierwszy wpis</title>
         <link>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</link>
         <pubDate>Sat, 04 Jan 2020 00:01:57 +0100</pubDate>
-        <author>rl89@interia.pl (Robert Lewandowski)</author>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</guid>
         <description>Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)
 Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które kiedyś może się przydać.
