@@ -18,10 +18,10 @@
       
       <item>
         <title>Projekt - Car Manager</title>
-        <link>https://rl89pl.github.io/pl/posts/car-manager/</link>
+        <link>https://rl89pl.github.io/pl/posts/car_manager/</link>
         <pubDate>Fri, 10 Jan 2020 02:13:55 +0100</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/posts/car-manager/</guid>
+        <guid>https://rl89pl.github.io/pl/posts/car_manager/</guid>
         <description>Wprowadzenie Kiedyś używałem aplikacji do kontrolowania budżetu związanej z użytkowaniem auta. Bardzo praktyczne aplikacje pozwalały mi na zapisywanie przebytych tras i tankowań, dzięki czemu wiedziałem jakie koszty ponoszę miesięcznie.
 Niestety, aplikacje których używałem posiadają również wady. Gdy przez ok rok nie używałem aplikacji i do niej powróciłem, po wprowadzeniu danych odnośnie tankowania, wskazywało błędne dane w postaci 10 000 km do następnego tankowania, etc.
 Postanowiłem stworzyć własną aplikację tego typu dla własnego użytku.</description>
@@ -74,10 +74,10 @@ Link do GH GitHub.</description>
       
       <item>
         <title>Mój pierwszy wpis</title>
-        <link>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</link>
+        <link>https://rl89pl.github.io/pl/posts/pierwszy_wpis/</link>
         <pubDate>Sat, 04 Jan 2020 00:01:57 +0100</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/posts/pierwszy-wpis/</guid>
+        <guid>https://rl89pl.github.io/pl/posts/pierwszy_wpis/</guid>
         <description>Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)
 Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które kiedyś może się przydać.
  &amp;ldquo;Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery” - Abraham Lincoln
