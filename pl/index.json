@@ -1,5 +1,14 @@
 [
 {
+	"uri": "https://rl89pl.github.io/pl/series/car-manager/",
+	"title": "Car Manager",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://rl89pl.github.io/pl/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -9,21 +18,30 @@
 	"content": ""
 },
 {
-	"uri": "https://rl89pl.github.io/pl/notes/wifi_pswd/",
-	"title": "Hasła do wifi",
-	"tags": ["Windows"],
-	"categories": [],
-	"series": [""],
-	"description": "Sprawdzenie zapisanych haseł do sieci WiFi",
-	"content": "Zdarza się, że potrzebujemy hasło do sieci wifi, do której się wcześniej logowaliśmy, by móc zalogować się np. w telefonie, ale nie pamiętamy hasła.\nRozwiązanie pod Windowsa jest bardzo proste. Jedyne czego potrzebujemy to cmd.\nW terminalu wpisujemy poniższe polecenie:\nnetsh wlan show profiles\rOtrzymamy listę zapisanych sieci:\nNastępnie wpisujemy poniższe polecenie, gdzie zamiast NAZWA_SIECI podajemy interesującą nas sieć:\nnetsh wlan show profiles name=NAZWA_SIECI key=clear\rNasze hasło zapisane jest pod Key Content:\n"
-},
-{
-	"uri": "https://rl89pl.github.io/pl/notes/",
-	"title": "Notatki",
-	"tags": ["index"],
+	"uri": "https://rl89pl.github.io/pl/categories/projekt/",
+	"title": "Projekt",
+	"tags": [],
 	"categories": [],
 	"series": [],
-	"description": "Notatki",
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/posts/car-manager/",
+	"title": "Projekt - Car Manager",
+	"tags": ["Python"],
+	"categories": [],
+	"series": ["Car Manager"],
+	"description": "Projekt aplikacji pomagającej kontrolować i analizować wydatki związane z utrzymaniem samochodu.",
+	"content": "Wprowadzenie Kiedyś używałem aplikacji do kontrolowania budżetu związanej z użytkowaniem auta. Bardzo praktyczne aplikacje pozwalały mi na zapisywanie przebytych tras i tankowań, dzięki czemu wiedziałem jakie koszty ponoszę miesięcznie.\nNiestety, aplikacje których używałem posiadają również wady. Gdy przez ok rok nie używałem aplikacji i do niej powróciłem, po wprowadzeniu danych odnośnie tankowania, wskazywało błędne dane w postaci 10 000 km do następnego tankowania, etc.\nPostanowiłem stworzyć własną aplikację tego typu dla własnego użytku. Wpierw będzie to skrypt obsługujący bazę danych, następnie aplikacja desktopowa, która będzie korzystać z danych z Django rest framework, a na koniec aplikacja mobilna.\nMógłbym od razu przejść do tworzenia API, by cały proces tworzenia bazy danych przeszedł niemalże automatycznie, lecz dla ćwiczeń to idealne rozwiązanie.\nRepozytorium projektu: Car Manager\nDiagram gantt\rsection Car Manager\rSkrypt + baza danych :active, des1, 2020-01-10,2020-01-12\rDjango : des2, after des1, 3d\rDesktop app : des3, after des2, 2d\rMobile app : des4, after des3, 2d\rKlient-\u0026gt;Program: Uruchomienie\rProgram-\u0026gt;Klient: Statystyki\rProgram-\u0026gt;Klient: Lista wyboru\rKlient --\u0026gt;Program: Wybór auta\rKlient --\u0026gt;Program: Dodanie wpisu\rKlient --\u0026gt;Program: Dodanie auta\rNote right of Program: Zgodnie z wybraną opcją\rProgram-\u0026gt;Klient: Output\rstateDiagram\r[*] --\u0026gt; Statystyki\rStatystyki --\u0026gt; Lista\rLista --\u0026gt; Dodaj_auto\rDodaj_auto --\u0026gt; Lista\rLista --\u0026gt; Wybór_auta\rLista --\u0026gt; Dodaj_wpis\rDodaj_wpis --\u0026gt; [*]\rWybór_auta --\u0026gt; Dodaj_wpis\rDodaj_wpis --\u0026gt; [*]\r"
+},
+{
+	"uri": "https://rl89pl.github.io/pl/tags/python/",
+	"title": "Python",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
 	"content": ""
 },
 {
@@ -54,6 +72,33 @@
 	"content": ""
 },
 {
+	"uri": "https://rl89pl.github.io/pl/posts/",
+	"title": "Wpisy",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Strona z wpisami",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/notes/wifi_pswd/",
+	"title": "Hasła do wifi",
+	"tags": ["Windows"],
+	"categories": [],
+	"series": [""],
+	"description": "Sprawdzenie zapisanych haseł do sieci WiFi",
+	"content": "Zdarza się, że potrzebujemy hasło do sieci wifi, do której się wcześniej logowaliśmy, by móc zalogować się np. w telefonie, ale nie pamiętamy hasła.\nRozwiązanie pod Windowsa jest bardzo proste. Jedyne czego potrzebujemy to cmd.\nW terminalu wpisujemy poniższe polecenie:\nnetsh wlan show profiles\rOtrzymamy listę zapisanych sieci:\nNastępnie wpisujemy poniższe polecenie, gdzie zamiast NAZWA_SIECI podajemy interesującą nas sieć:\nnetsh wlan show profiles name=NAZWA_SIECI key=clear\rNasze hasło zapisane jest pod Key Content:\n"
+},
+{
+	"uri": "https://rl89pl.github.io/pl/notes/",
+	"title": "Notatki",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Notatki",
+	"content": ""
+},
+{
 	"uri": "https://rl89pl.github.io/pl/tags/windows/",
 	"title": "Windows",
 	"tags": [],
@@ -72,15 +117,6 @@
 	"content": "Moje Raspberry automatycznie po uruchomieniu łączy się z VPN. Bez statycznego IP, ciężko jest wyszukać adres urządzenia, gdy nieoczekiwanie nastąpi restart, albo chwilowe rozłączenie z siecią. Jednym z wielu rozwiązań, będzie automat wysyłający SMSem swój adres IP. Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się z moim Raspberry, nie zastanawiając się jakie ma IP.\nPotrzebne biblioteki By sprawdzić IP potrzebna jest biblioteka netifaces, a do wysyłania SMSów najlepszą opcją będzie Nexmo\nSkrypt Python 1 2 3 4 5 6 7 8 9  import netifaces as ni\rimport nexmo\rclient = nexmo.Client(key=\u0026#39;klucz\u0026#39;, secret=\u0026#39;kod\u0026#39;)\ra = ni.ifaddresses(\u0026#39;tap0\u0026#39;)\rfor c, d in a.items():\rfor z in d:\radres = z[\u0026#39;addr\u0026#39;]\rif \u0026#39;.\u0026#39; in adres:\rclient.send_message({\u0026#39;from\u0026#39;: \u0026#39;Raspberry\u0026#39;, \u0026#39;to\u0026#39;: 48123456789, \u0026#39;text\u0026#39;: adres, \u0026#39;type\u0026#39;: \u0026#39;unicode\u0026#39;})\r  Następnie dodaję do crona odpowiednie zadania. Dzięki pierwszemu wpisowi, po restarcie łączy się z odpowiednim VPNem, a drugi uruchamia minutę po restarcie powyższy skrypt.\nZadania cron 1 2  @reboot sudo openvpn --config /etc/default/plik_vpn.ovpn\r@reboot sleep 60 \u0026amp;\u0026amp; /usr/bin/python3 /root/Desktop/Skrypty/send_ip.py\r  "
 },
 {
-	"uri": "https://rl89pl.github.io/pl/tags/python/",
-	"title": "Python",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://rl89pl.github.io/pl/tags/raspberry/",
 	"title": "Raspberry",
 	"tags": [],
@@ -96,15 +132,6 @@
 	"categories": [],
 	"series": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/posts/",
-	"title": "Wpisy",
-	"tags": ["index"],
-	"categories": [],
-	"series": [],
-	"description": "Strona z wpisami",
 	"content": ""
 },
 {
