@@ -536,7 +536,7 @@
     <h2 class="single__title">Car manager - wersja konsolowa cz.1</h2>
     <div class="single__meta">
       <div class="single__infos">
-  <span class="single__info" title="">🕓 </span>  &middot; <span class="single__info" title=""> ☕6  </span>
+  <span class="single__info" title="">🕓 </span>  &middot; <span class="single__info" title=""> ☕7  </span>
   <span class="single__info">
     
   </span>
@@ -902,21 +902,67 @@ Na początek wprowadzimy możliwość dodawania aut:</p>
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">)</span><span class="p">:</span>
-    <span class="n">nazwa</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj nazwę auta: </span><span class="s2">&#34;</span><span class="p">)</span>
-    <span class="n">marka</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj markę auta: </span><span class="s2">&#34;</span><span class="p">)</span>
-    <span class="n">rocznik</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj rocznik auta: </span><span class="s2">&#34;</span><span class="p">)</span>
-    
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">addStatDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">,</span><span class="n">auto</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">wybor_daty</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">while</span> <span class="n">wybor_daty</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">data_dzis</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Wstawić dzisiejszą datę? T/N</span><span class="s2">&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">t</span><span class="s2">&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">T</span><span class="s2">&#34;</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">(</span><span class="p">)</span>
+            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">elif</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">n</span><span class="s2">&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">N</span><span class="s2">&#34;</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj datę tankowania: </span><span class="s2">&#34;</span><span class="p">)</span>
+            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">godzina</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj godzinę: </span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="n">licznik_km</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj stan licznika kilometrów: </span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="n">cena</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj cenę: </span><span class="s2">&#34;</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">ilosc_litrow</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Podaj ilość zatankowanego paliwa: </span><span class="s2">&#34;</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">wybor_do_pelna</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">do_pelna</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Czy zatankowałeś do pełna? T/N</span><span class="s2">&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">t</span><span class="s2">&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">T</span><span class="s2">&#34;</span><span class="p">:</span>
+            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">elif</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">n</span><span class="s2">&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">N</span><span class="s2">&#34;</span><span class="p">:</span>
+            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">koszt</span> <span class="o">=</span> <span class="n">cena</span> <span class="o">*</span> <span class="n">ilosc_litrow</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
         <span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="p">)</span>
 
-        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">INSERT INTO `car`</span><span class="s2">
-</span><span class="s2"></span><span class="s2">                            (</span><span class="s2">&#39;</span><span class="s2">nazwa</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">marka</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">rocznik</span><span class="s2">&#39;</span><span class="s2">) </span><span class="s2">
+        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">INSERT INTO `stats`</span><span class="s2">
+</span><span class="s2"></span><span class="s2">                            (</span><span class="s2">&#39;</span><span class="s2">data</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">godzina</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">licznik_km</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">cena</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">ilosc_litrow</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">koszt</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">do_pelna</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">car_id</span><span class="s2">&#39;</span><span class="s2">) </span><span class="s2">
 </span><span class="s2"></span><span class="s2">                            VALUES </span><span class="s2">
-</span><span class="s2"></span><span class="s2">                            (</span><span class="s2">&#39;</span><span class="s2">{}</span><span class="s2">&#39;</span><span class="s2">,</span><span class="s2">&#39;</span><span class="s2">{}</span><span class="s2">&#39;</span><span class="s2">,{})</span><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nazwa</span><span class="p">,</span> <span class="n">marka</span><span class="p">,</span> <span class="n">rocznik</span><span class="p">)</span>
+</span><span class="s2"></span><span class="s2">                            (</span><span class="s2">&#39;</span><span class="s2">{}</span><span class="s2">&#39;</span><span class="s2">,</span><span class="s2">&#39;</span><span class="s2">{}</span><span class="s2">&#39;</span><span class="s2">,{},{},{},{},{},{})</span><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">godzina</span><span class="p">,</span> <span class="n">licznik_km</span><span class="p">,</span> <span class="n">cena</span><span class="p">,</span> <span class="n">ilosc_litrow</span><span class="p">,</span> <span class="n">koszt</span><span class="p">,</span><span class="n">do_pelna</span><span class="p">,</span> <span class="n">auto</span><span class="p">)</span>
 
         <span class="n">count</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlite_insert_query</span><span class="p">)</span>
         <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span>
@@ -1455,12 +1501,6 @@ Wykorzystamy w tym celu bibliotekę <a href="https://pypi.org/project/pick/">pic
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H&#43;gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@rokt33r/js-sequence-diagrams@2.0.6-2/dist/sequence-diagram-min.js" integrity="sha256-eadHf9g1REH9Wvp2FLV/D9vKNvQUFKuVPgWFvmMQxBE=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rokt33r/js-sequence-diagrams@2.0.6-2/dist/sequence-diagram-min.css" integrity="sha256-On01v36B8LRDuL2tqhqs7Gb3Cm/NIpsLFy4OarOodUA=" crossorigin="anonymous">
-
 
 
 
@@ -1694,7 +1734,7 @@ Wykorzystamy w tym celu bibliotekę <a href="https://pypi.org/project/pick/">pic
 
     
     
-    var lib = JSON.parse("[\"mermaid\",\"msc\"]");
+    var lib = JSON.parse("[\"mermaid\"]");
 
     if (lib && lib.includes('mermaid')) {
       
