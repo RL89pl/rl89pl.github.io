@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/series/car-manager/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/wersja_konsolowa/</loc>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://rl89pl.github.io/pl/categories/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -24,22 +29,17 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/posts/car_manager/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://rl89pl.github.io/pl/tags/python/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://rl89pl.github.io/pl/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,7 +54,7 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/series/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -69,7 +69,7 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/tags/</loc>
-    <lastmod>2020-01-10T02:13:55+01:00</lastmod>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -84,6 +84,11 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/posts/</loc>
+    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/car_manager/</loc>
     <lastmod>2020-01-10T02:13:55+01:00</lastmod>
   </url>
   

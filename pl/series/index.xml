@@ -9,7 +9,7 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 02:13:55 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 16:38:49 +0100</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,7 +19,7 @@
       <item>
         <title>Car Manager</title>
         <link>https://rl89pl.github.io/pl/series/car-manager/</link>
-        <pubDate>Fri, 10 Jan 2020 02:13:55 +0100</pubDate>
+        <pubDate>Tue, 14 Jan 2020 16:38:49 +0100</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/series/car-manager/</guid>
         <description></description>
