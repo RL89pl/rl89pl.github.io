@@ -568,10 +568,11 @@ Wpierw będzie to skrypt obsługujący bazę danych, następnie aplikacja deskto
 <h3 id="diagram">Diagram</h3>
 <pre><code class="language-mermaid" data-lang="mermaid">gantt
 section Car Manager
-Skrypt + baza danych :active,    des1, 2020-01-10,2020-01-12
-Django        :  des2, after des1, 3d
+Skrypt + baza danych :done,    des1, 2020-01-12,2020-01-14
+Django        :active,  des2, after des1, 2d
 Desktop app   :         des3, after des2, 2d
 Mobile app   :         des4, after des3, 2d
+
 </code></pre><pre><code class="language-msc" data-lang="msc">Klient-&gt;Program: Uruchomienie
 Program-&gt;Klient: Statystyki
 Program-&gt;Klient: Lista wyboru
