@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automatyzacja on Robert Lewandowski</title>
+    <link>https://rl89pl.github.io/pl/series/automatyzacja/</link>
+    <description>Recent content in Automatyzacja on Robert Lewandowski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
+    <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 01:55:00 +0100</lastBuildDate>
+    
+        <atom:link href="https://rl89pl.github.io/pl/series/automatyzacja/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Automatyzacja projektow</title>
+        <link>https://rl89pl.github.io/pl/posts/automatyzacja_projektow/</link>
+        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/automatyzacja_projektow/</guid>
+        <description>Wprowadzenie Trzeba szanować swój czas i w miarę możliwości automatyzować wszystko, co jest uciążliwe, monotonne, często powtarzalne. Postanowiłem ułatwić sobie pracę przy tworzeniu nowego projektu, a także szybkie rozpoczęcie pisania nawet testowego skryptu.
+Przy tworzeniu projektu musiałbym wpierw utworzyć odpowiedni folder, zalogować się na github.com w celu utworzenia repozytorium, zainicjowanie go, utworzenie pliku README i przesłanie na platformę github. Dodatkowo utworzenie pustego pliku python i uruchomienie VS Code.
+Trochę to czasu zajmuje, a gdyby to wszystko zastąpić wyłącznie komendą w cmd, lub powershell w formie komendy z dowolnego miejsca w systemie?</description>
+      </item>
+      
+    
+  </channel>
+</rss>
