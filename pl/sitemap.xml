@@ -3,6 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rl89pl.github.io/pl/categories/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/django/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/hackyeah/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/python/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/scam-base/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/tags/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rl89pl.github.io/pl/categories/automatyzacja/</loc>
     <lastmod>2020-01-19T01:55:00+01:00</lastmod>
   </url>
@@ -18,82 +108,12 @@
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/categories/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</loc>
     <lastmod>2020-01-19T01:55:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/tags/python/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/series/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/series/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/tags/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://rl89pl.github.io/pl/tags/windows/</loc>
-    <lastmod>2020-01-19T01:55:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/posts/</loc>
     <lastmod>2020-01-19T01:55:00+01:00</lastmod>
   </url>
   
@@ -104,11 +124,6 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/posts/wersja_konsolowa/</loc>
-    <lastmod>2020-01-14T16:38:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
     <lastmod>2020-01-14T16:38:49+01:00</lastmod>
   </url>
   

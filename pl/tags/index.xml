@@ -9,7 +9,7 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 01:55:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 00:07:53 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,20 +17,29 @@
     
       
       <item>
-        <title>Produktywność</title>
-        <link>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</link>
-        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
+        <title>Django</title>
+        <link>https://rl89pl.github.io/pl/tags/django/</link>
+        <pubDate>Sun, 14 Jun 2020 00:07:53 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</guid>
+        <guid>https://rl89pl.github.io/pl/tags/django/</guid>
         <description></description>
       </item>
       
       <item>
         <title>Python</title>
         <link>https://rl89pl.github.io/pl/tags/python/</link>
-        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
+        <pubDate>Sun, 14 Jun 2020 00:07:53 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/tags/python/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Produktywność</title>
+        <link>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</link>
+        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</guid>
         <description></description>
       </item>
       

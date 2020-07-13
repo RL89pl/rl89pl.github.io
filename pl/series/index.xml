@@ -9,12 +9,21 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 01:55:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 00:07:53 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Scam Base</title>
+        <link>https://rl89pl.github.io/pl/series/scam-base/</link>
+        <pubDate>Sun, 14 Jun 2020 00:07:53 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/series/scam-base/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>Automatyzacja</title>
