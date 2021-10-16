@@ -37,7 +37,7 @@
 },
 {
 	"uri": "https://rl89pl.github.io/pl/posts/django_tips_0/",
-	"title": "Hackyeah",
+	"title": "Django - Quick Tips - Templatetags",
 	"tags": ["Python", "Django"],
 	"categories": [],
 	"series": ["Django - quick tips"],
