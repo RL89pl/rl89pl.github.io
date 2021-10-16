@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mój pierwszy wpis – Robert Lewandowski</title>
+    <title>Hackyeah – Robert Lewandowski</title>
     
 
 
@@ -295,21 +295,21 @@
 <link rel="stylesheet" href="/css/main.min.css">
 
 
-    <meta name="description" content="Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)" />
+    <meta name="description" content="Django - quick tips - Start" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-01-04T00:01:57&#43;0100">
-<meta name="modified" content="2020-01-04T00:01:57&#43;0100">
+<meta name="created" content="2021-10-16T00:00:10&#43;0200">
+<meta name="modified" content="2021-10-16T00:00:10&#43;0200">
 
 
 <meta property="og:site_name" content="Robert Lewandowski">
-<meta property="og:title" content="Mój pierwszy wpis">
-<meta property="og:url" content="https://rl89pl.github.io/pl/posts/pierwszy_wpis/">
+<meta property="og:title" content="Hackyeah">
+<meta property="og:url" content="https://rl89pl.github.io/pl/posts/django_tips_0/">
 <meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.62.1" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="https://rl89pl.github.io/pl/posts/pierwszy_wpis/">
+<link rel="canonical" href="https://rl89pl.github.io/pl/posts/django_tips_0/">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -321,12 +321,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "Mój pierwszy wpis",
-    "datePublished": "2020-01-04T00:01:57+01:00",
-    "dateModified": "2020-01-04T00:01:57+01:00",
-    "url" : "https://rl89pl.github.io/pl/posts/pierwszy_wpis/",
-    "description": "Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)",
-    "keywords": [""],
+    "headline": "Hackyeah",
+    "datePublished": "2021-10-16T00:00:10+02:00",
+    "dateModified": "2021-10-16T00:00:10+02:00",
+    "url" : "https://rl89pl.github.io/pl/posts/django_tips_0/",
+    "description": "Django - quick tips - Start",
+    "keywords": ["Python","Django"],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://rl89pl.github.io"
@@ -524,7 +524,7 @@
   
   <li  class="is-active" >    
     
-      <a href="https://rl89pl.github.io/pl/posts/pierwszy_wpis/">Mój pierwszy wpis</a>
+      <a href="https://rl89pl.github.io/pl/posts/django_tips_0/">Hackyeah</a>
         
   </li>
   
@@ -533,7 +533,7 @@
 </nav>
   
   <div class="single">
-    <h2 class="single__title">Mój pierwszy wpis</h2>
+    <h2 class="single__title">Hackyeah</h2>
     <div class="single__meta">
       <div class="single__infos">
   <span class="single__info" title="">🕓 </span>  &middot; <span class="single__info" title=""> ☕1  </span>
@@ -544,23 +544,105 @@
       <div class="single__tags caption">
 
   
+    🏷️
+  
+  
+  <li>
+    <a href="/pl/tags/python" class="single__tag" title="Python">
+      #Python
+    </a>
+  </li>
+    
+
+  
+  
+  <li>
+    <a href="/pl/tags/django" class="single__tag" title="Django">
+      #Django
+    </a>
+  </li>
     
 
 </div>
     </div>    
     <article class="single__contents">
-      <p>Wpisy na blogu mają posłużyć w przyszłości za swoistą bazę wiedzy. Nie oczekuję, że ktokolwiek poza mną to będzie czytał, ale jeśli z jakiegoś powodu znajdzie się jakiś czytelnik, to serdecznie witam :)<br />
-Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które kiedyś może się przydać.</p>
-<hr />
-<blockquote>
-<p>&ldquo;Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery” - Abraham Lincoln</p>
-</blockquote>
-<hr />
-<blockquote>
-<p>&ldquo;Kto nie ma pamięci, ten niech ją sobie stworzy na papierze.&rdquo; - Gabriel Garcia Marquez</p>
-</blockquote>
-<hr />
+      <h3 id="django---quick-tips">Django - Quick Tips</h3>
+<p>Rozpoczynam nową serię z drobnymi poradami dotyczącymi Django.<br />
+Na początek serii napiszę i omówię dość przydatny templatetag, który ułatwi pracę z paginacją i różnym filtrowaniem/sortowaniem na stronie.</p>
+<p><strong>Problem</strong></p>
+<p>Na stronie masz paginator, a także sortowanie, bądź filtrowanie treści. <br />
+Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hellip; jesteś co prawda na kolejnej stronie, ale bez wybranego filtrowania.</p>
+<h3 id="template-tag">Template Tag</h3>
+<p><strong>Przygotowanie</strong></p>
+<p>W folderze aplikacji django, gdzie są pliki m.in. <code>views.py</code>, <code>models.py</code> tworzymy moduł, czyli tworzymy folder <code>templatetags</code> a w nim plik <code>__init__.py</code>, oraz <code>url_tag.py</code>.</p>
+<p><strong>Edycja <code>url_tag.py</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="p">)</span>
 
+
+<span class="nd">@register.simple_tag</span><span class="p">(</span><span class="n">takes_context</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">url_add</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="o">*</span><span class="n">kwargs</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">request</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">get</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">kwarg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">get</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">kwarg</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">get</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">f</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">{request.path}?</span><span class="s2">&#34;</span>
+    <span class="n">path</span> <span class="o">+</span><span class="o">=</span> <span class="n">get</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Użycie tagu</strong></p>
+<p>By użyć tagu <code>{% url_add %}</code>, musimy go zarejestrować na początku templatu</p>
+<pre><code>{% load url_tag %}
+</code></pre><p>Następnie w przypadku paginacji zamiast:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>wstawiamy:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Jeśli chcemy powiązać tag z formularzem, by np. łączyć zapytania z filtrowaniem, bądź sortowaniem, to podajemy tag w <code>form action</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% url_add %}&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Dzięki temu adres url może wyglądać następująco:</p>
+<pre><code class="language-url" data-lang="url">https://moja-strona.pl/news/?category=3&amp;category=4&amp;page=2
+</code></pre>
     </article>
     
 <div class="donation__message">
@@ -691,18 +773,49 @@ Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które
     <section class="related">
     
     
+    <h1 class="related__title">
+      <hr class="hr-dots"/>
+      <div>
+        
+      </div>
+      <hr class="hr-dots"/>
+    </h1>
+    <ul class="related-ul">
+        
+        <li>
+          <a href="/pl/posts/hackyeah/" class="related__link">Hackyeah</a>
+        </li>
+        
+        <li>
+          <a href="/pl/posts/automatyzacja_projektow/" class="related__link">Automatyzacja projektow</a>
+        </li>
+        
+        <li>
+          <a href="/pl/posts/wersja_konsolowa/" class="related__link">Car manager - wersja konsolowa cz.1</a>
+        </li>
+        
+        <li>
+          <a href="/pl/posts/car_manager/" class="related__link">Projekt - Car Manager</a>
+        </li>
+        
+        <li>
+          <a href="/pl/posts/raspberry_ip/" class="related__link">IP mojego RaspberryPi</a>
+        </li>
+        
+    </ul>
+    
   </section>
     <div class="grow"></div>
 <nav class="pagination-single">
   
-  <div class="grow"></div>
-  
-    <a href="https://rl89pl.github.io/pl/about/" class="pagination-single__right">      
-      <div class="pagination-single__right-title">O mnie</div>
+    <a href="https://rl89pl.github.io/pl/posts/hackyeah/" class="pagination-single__left">
       <div class="pagination-single__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
       </div>
+      <div class="pagination-single__left-title">Hackyeah</div>      
     </a>
+  
+  <div class="grow"></div>
   
 </nav>
     
@@ -811,7 +924,16 @@ Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które
     
   </div>
   <div class="toc ">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#django---quick-tips">Django - Quick Tips</a></li>
+        <li><a href="#template-tag">Template Tag</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </section>
 
@@ -1298,7 +1420,7 @@ Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które
         
           
             
-              <a href="https://rl89pl.github.io/pl/posts/pierwszy_wpis/" data-lang="pl" class="dropdown-item is-active">Polish</a>
+              <a href="https://rl89pl.github.io/pl/posts/django_tips_0/" data-lang="pl" class="dropdown-item is-active">Polish</a>
             
           
         
@@ -1385,7 +1507,7 @@ Dział notatek jest dla szybkich wpisów, by zapisać sobie rozwiązanie, które
             
     
     
-  <a href="https://rl89pl.github.io/pl/posts/pierwszy_wpis//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
+  <a href="https://rl89pl.github.io/pl/posts/django_tips_0//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="currentColor" cx="6.18" cy="17.82" r="2.18"/><path fill="currentColor" d="M5.59 10.23c-.84-.14-1.59.55-1.59 1.4 0 .71.53 1.28 1.23 1.4 2.92.51 5.22 2.82 5.74 5.74.12.7.69 1.23 1.4 1.23.85 0 1.54-.75 1.41-1.59-.68-4.2-3.99-7.51-8.19-8.18zm-.03-5.71C4.73 4.43 4 5.1 4 5.93c0 .73.55 1.33 1.27 1.4 6.01.6 10.79 5.38 11.39 11.39.07.73.67 1.28 1.4 1.28.84 0 1.5-.73 1.42-1.56-.73-7.34-6.57-13.19-13.92-13.92z"/></svg>
   </a>
 

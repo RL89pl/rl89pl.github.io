@@ -9,12 +9,21 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 14 Jun 2020 00:07:53 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Oct 2021 00:00:10 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Django - quick tips</title>
+        <link>https://rl89pl.github.io/pl/series/django-quick-tips/</link>
+        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/series/django-quick-tips/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>Scam Base</title>

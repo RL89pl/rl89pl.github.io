@@ -9,12 +9,26 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 14 Jun 2020 00:07:53 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Oct 2021 00:00:10 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Hackyeah</title>
+        <link>https://rl89pl.github.io/pl/posts/django_tips_0/</link>
+        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/django_tips_0/</guid>
+        <description>Django - Quick Tips Rozpoczynam nową serię z drobnymi poradami dotyczącymi Django.
+Na początek serii napiszę i omówię dość przydatny templatetag, który ułatwi pracę z paginacją i różnym filtrowaniem/sortowaniem na stronie.
+Problem
+Na stronie masz paginator, a także sortowanie, bądź filtrowanie treści. Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&amp;hellip; jesteś co prawda na kolejnej stronie, ale bez wybranego filtrowania.
+Template Tag Przygotowanie
+W folderze aplikacji django, gdzie są pliki m.</description>
+      </item>
       
       <item>
         <title>Hackyeah</title>
@@ -47,7 +61,8 @@ Trochę to czasu zajmuje, a gdyby to wszystko zastąpić wyłącznie komendą w 
         <description>Wprowadzenie ganttsection Car ManagerSkrypt + baza danych :active, des1, 2020-01-14,2020-01-16Django : des2, after des1, 2dDesktop app : des3, after des2, 2dMobile app : des4, after des3, 2dCzas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.
 Baza danych w prostym SQlite.
 Repozytorium projektu: Car Manager
-By ułatwić sobie pracę z opisywaniem kodu na blogu, kod będzie dzielony na funkcje. Na sam koniec przerobię to na klasy, by mieć później lepszy wgląd do kodu.</description>
+Praca z bazą danych Przy uruchamianiu programu chcemy, aby pokazał się aktualny stan pojazdu.
+Czyli w pierwszej kolejności musimy odczytać z bazy danych interesujące nas tabele, a jeśli jej nie ma, to utworzyć nową bazę.</description>
       </item>
       
       <item>

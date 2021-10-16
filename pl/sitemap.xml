@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/categories/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,28 +18,33 @@
   </url>
   
   <url>
+    <loc>https://rl89pl.github.io/pl/categories/django/</loc>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rl89pl.github.io/pl/tags/django/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/posts/hackyeah/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <loc>https://rl89pl.github.io/pl/series/django-quick-tips/</loc>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <loc>https://rl89pl.github.io/pl/posts/django_tips_0/</loc>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://rl89pl.github.io/pl/tags/python/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://rl89pl.github.io/pl/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -53,13 +58,8 @@
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/series/scam-base/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://rl89pl.github.io/pl/series/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -74,7 +74,7 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/tags/</loc>
-    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -89,6 +89,21 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/posts/</loc>
+    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/hackyeah/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
+    <lastmod>2020-06-14T00:07:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/scam-base/</loc>
     <lastmod>2020-06-14T00:07:53+02:00</lastmod>
   </url>
   
