@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://rl89pl.github.io/pl/categories/</loc>
-    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,6 +15,56 @@
                 hreflang="pl"
                 href="https://rl89pl.github.io/pl/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rl89pl.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://rl89pl.github.io/pl/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/series/todo/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/todo_0/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rl89pl.github.io/pl/posts/</loc>
+    <lastmod>2022-02-06T00:45:00+02:00</lastmod>
   </url>
   
   <url>
@@ -43,36 +93,6 @@
   </url>
   
   <url>
-    <loc>https://rl89pl.github.io/pl/</loc>
-    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/series/</loc>
-    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rl89pl.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://rl89pl.github.io/pl/series/"
-                />
-  </url>
-  
-  <url>
     <loc>https://rl89pl.github.io/pl/tags/</loc>
     <lastmod>2021-10-16T00:00:10+02:00</lastmod>
     <xhtml:link
@@ -85,26 +105,6 @@
                 hreflang="pl"
                 href="https://rl89pl.github.io/pl/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/posts/</loc>
-    <lastmod>2021-10-16T00:00:10+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/categories/projekt/</loc>
-    <lastmod>2021-02-06T00:45:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/series/todo/</loc>
-    <lastmod>2021-02-06T00:45:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rl89pl.github.io/pl/posts/todo_0/</loc>
-    <lastmod>2021-02-06T00:45:00+02:00</lastmod>
   </url>
   
   <url>

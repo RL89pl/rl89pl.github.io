@@ -9,6 +9,60 @@
 	"content": ""
 },
 {
+	"uri": "https://rl89pl.github.io/pl/categories/projekt/",
+	"title": "Projekt",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/",
+	"title": "Robert Lewandowski",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/series/",
+	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/series/todo/",
+	"title": "ToDo",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://rl89pl.github.io/pl/posts/todo_0/",
+	"title": "ToDo APP - opis projektu",
+	"tags": [],
+	"categories": [],
+	"series": ["ToDo"],
+	"description": "Opis projektu aplikacji typu TODO",
+	"content": "Dostępne aplikacje Używałem wielu aplikacji do planowania zadań i jeszcze więcej testowałem.\nPrzykładowo w każdej można utworzyć listę zadań, np.:\n Zakup słuchawek Trening Sprzątanie piwnicy  W wielu z nich można także ustalić ile dane zadanie zajmie nam czasu i na podstawie tego planować dzień.\nProblem i rozwiązanie Nie przypominam sobie jednak, by jakakolwiek z nich miała opcję predefiniowanych podzadań.\nOczywiście wiele z nich miało możliwość dodawania podzadań, ale trzeba je uzupełniać za każdym razem, gdy dodaje się główne zadanie.\nProblemem jest to, że zadanie np. Trening jest niekompletne.\nDobrze byłoby mieć już wszystko skonfigurowane tak, że gdy doda się takie zadanie do listy, to dodawałyby się automatycznie podzadania, np.:\n Spakować strój sportowy Zabrać ze sobą wodę Spakować ręcznik kąpielowy Spakować ręczniik na sprzęt  Przy wyznaczaniu czasu w zadaniach też warto uwzględnić np. przejazdy do i z siłowni, oraz przebranie się + prysznic.\nNie zawsze o tym się pamięta, gdy ma się tylko zapis \u0026ldquo;trening\u0026rdquo; i zapewne każdy wpisuje przybliżony czas samego treningu :)\nGdyby dodać predefiniowane zadania, można byłoby ustawić sobie taski pod konkretny rodzaj treningu wraz z ćwiczeniami i nie trzeba za każdym razem tego dodawać.\nStrasznie uciążliwe byłoby dodawać na nowo ćwiczenia w treningu typu Split, gdzie mamy podział na PUSH, PULL i LEGS.\nProjekt Ogólne założenia:\n dobrze, gdyby aplikacja była multiplatformowa, ponieważ samo planowanie wolę wykonywać na desktopie, ale już przy oznaczaniu wykonanych zadań nie chcę się ograniczać i wolę do tego apkę mobilną jeżeli aplikacja ma być multiplatformowa, to musi posiadać też REST API, tym bardziej, że wiele predefiniowanych zadań będę chciał dodać automatem (np. rodzaje treningów)  Stack technologiczny:\n frontend - Vue/Angular/React backend - Django mobile: Flutter  Na pewno będę chciał przetestować nowe możliwości Fluttera jeśli chodzi o desktopowe aplikacje, ale to taki raczej bonus.\n"
+},
+{
+	"uri": "https://rl89pl.github.io/pl/posts/",
+	"title": "Wpisy",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Strona z wpisami",
+	"content": ""
+},
+{
 	"uri": "https://rl89pl.github.io/pl/tags/django/",
 	"title": "Django",
 	"tags": [],
@@ -54,24 +108,6 @@
 	"content": ""
 },
 {
-	"uri": "https://rl89pl.github.io/pl/",
-	"title": "Robert Lewandowski",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/series/",
-	"title": "Series",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://rl89pl.github.io/pl/tags/",
 	"title": "Tags",
 	"tags": [],
@@ -79,42 +115,6 @@
 	"series": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/posts/",
-	"title": "Wpisy",
-	"tags": ["index"],
-	"categories": [],
-	"series": [],
-	"description": "Strona z wpisami",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/categories/projekt/",
-	"title": "Projekt",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/series/todo/",
-	"title": "ToDo",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://rl89pl.github.io/pl/posts/todo_0/",
-	"title": "ToDo APP - opis projektu",
-	"tags": [],
-	"categories": [],
-	"series": ["ToDo"],
-	"description": "Opis projektu aplikacji typu TODO",
-	"content": "Dostępne aplikacje Używałem wielu aplikacji do planowania zadań i jeszcze więcej testowałem.\nPrzykładowo w każdej można utworzyć listę zadań, np.:\n Zakup słuchawek Trening Sprzątanie piwnicy  W wielu z nich można także ustalić ile dane zadanie zajmie nam czasu i na podstawie tego planować dzień.\nProblem i rozwiązanie Nie przypominam sobie jednak, by jakakolwiek z nich miała opcję predefiniowanych podzadań.\nOczywiście wiele z nich miało możliwość dodawania podzadań, ale trzeba je uzupełniać za każdym razem, gdy dodaje się główne zadanie.\nProblemem jest to, że zadanie np. Trening jest niekompletne.\nDobrze byłoby mieć już wszystko skonfigurowane tak, że gdy doda się takie zadanie do listy, to dodawałyby się automatycznie podzadania, np.:\n Spakować strój sportowy Zabrać ze sobą wodę Spakować ręcznik kąpielowy Spakować ręczniik na sprzęt  Przy wyznaczaniu czasu w zadaniach też warto uwzględnić np. przejazdy do i z siłowni, oraz przebranie się + prysznic.\nNie zawsze o tym się pamięta, gdy ma się tylko zapis \u0026ldquo;trening\u0026rdquo; i zapewne każdy wpisuje przybliżony czas samego treningu :)\nGdyby dodać predefiniowane zadania, można byłoby ustawić sobie taski pod konkretny rodzaj treningu wraz z ćwiczeniami i nie trzeba za każdym razem tego dodawać.\nStrasznie uciążliwe byłoby dodawać na nowo ćwiczenia w treningu typu Split, gdzie mamy podział na PUSH, PULL i LEGS.\nProjekt Ogólne założenia:\n dobrze, gdyby aplikacja była multiplatformowa, ponieważ samo planowanie wolę wykonywać na desktopie, ale już przy oznaczaniu wykonanych zadań nie chcę się ograniczać i wolę do tego apkę mobilną jeżeli aplikacja ma być multiplatformowa, to musi posiadać też REST API, tym bardziej, że wiele predefiniowanych zadań będę chciał dodać automatem (np. rodzaje treningów)  Stack technologiczny:\n frontend - Vue/Angular/React backend - Django mobile: Flutter  Na pewno będę chciał przetestować nowe możliwości Fluttera jeśli chodzi o desktopowe aplikacje, ale to taki raczej bonus.\n"
 },
 {
 	"uri": "https://rl89pl.github.io/pl/posts/hackyeah/",

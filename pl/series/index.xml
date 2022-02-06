@@ -9,7 +9,7 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 16 Oct 2021 00:00:10 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 06 Feb 2022 00:45:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,20 +17,20 @@
     
       
       <item>
+        <title>ToDo</title>
+        <link>https://rl89pl.github.io/pl/series/todo/</link>
+        <pubDate>Sun, 06 Feb 2022 00:45:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/series/todo/</guid>
+        <description></description>
+      </item>
+      
+      <item>
         <title>Django - quick tips</title>
         <link>https://rl89pl.github.io/pl/series/django-quick-tips/</link>
         <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/series/django-quick-tips/</guid>
-        <description></description>
-      </item>
-      
-      <item>
-        <title>ToDo</title>
-        <link>https://rl89pl.github.io/pl/series/todo/</link>
-        <pubDate>Sat, 06 Feb 2021 00:45:00 +0200</pubDate>
-        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/series/todo/</guid>
         <description></description>
       </item>
       
