@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>index on Robert Lewandowski</title>
+    <link>https://rl89pl.github.io/pl/tags/index/</link>
+    <description>Recent content in index on Robert Lewandowski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
+    <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="https://rl89pl.github.io/pl/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Wpisy</title>
+        <link>https://rl89pl.github.io/pl/posts/</link>
+        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Notatki</title>
+        <link>https://rl89pl.github.io/pl/notes/</link>
+        <pubDate>Sun, 05 Jan 2020 23:42:30 +0100</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/notes/</guid>
+        <description></description>
+      </item>
+      
+    
+  </channel>
+</rss>

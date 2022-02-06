@@ -9,12 +9,25 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 14 Jun 2020 00:07:53 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 06 Feb 2021 00:45:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/categories/projekt/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>ToDo APP - opis projektu</title>
+        <link>https://rl89pl.github.io/pl/posts/todo_0/</link>
+        <pubDate>Sat, 06 Feb 2021 00:45:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/todo_0/</guid>
+        <description>Dostępne aplikacje Używałem wielu aplikacji do planowania zadań i jeszcze więcej testowałem.
+Przykładowo w każdej można utworzyć listę zadań, np.:
+ Zakup słuchawek Trening Sprzątanie piwnicy  W wielu z nich można także ustalić ile dane zadanie zajmie nam czasu i na podstawie tego planować dzień.
+Problem i rozwiązanie Nie przypominam sobie jednak, by jakakolwiek z nich miała opcję predefiniowanych podzadań.
+Oczywiście wiele z nich miało możliwość dodawania podzadań, ale trzeba je uzupełniać za każdym razem, gdy dodaje się główne zadanie.</description>
+      </item>
       
       <item>
         <title>Hackyeah</title>

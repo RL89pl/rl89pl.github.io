@@ -306,7 +306,7 @@
 <meta property="og:url" content="https://rl89pl.github.io/pl/posts/raspberry_ip/">
 <meta property="og:type" content="article">
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://rl89pl.github.io/pl/posts/raspberry_ip/">
@@ -574,7 +574,7 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 <h3 id="skrypt-python">Skrypt Python</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -585,26 +585,26 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">netifaces</span> <span class="kn">as</span> <span class="nn">ni</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">netifaces</span> <span class="k">as</span> <span class="nn">ni</span>
 <span class="kn">import</span> <span class="nn">nexmo</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">nexmo</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">klucz</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">kod</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">ni</span><span class="o">.</span><span class="n">ifaddresses</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">tap0</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">nexmo</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;klucz&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;kod&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ni</span><span class="o">.</span><span class="n">ifaddresses</span><span class="p">(</span><span class="s1">&#39;tap0&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-        <span class="n">adres</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">addr</span><span class="s1">&#39;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">.</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">adres</span><span class="p">:</span>
-                <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">from</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Raspberry</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">to</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mi">48123456789</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">text</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">adres</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">type</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">unicode</span><span class="s1">&#39;</span><span class="p">}</span><span class="p">)</span>
+        <span class="n">adres</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;addr&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">adres</span><span class="p">:</span>
+                <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">({</span><span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Raspberry&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">48123456789</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">adres</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;unicode&#39;</span><span class="p">})</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Następnie dodaję do crona odpowiednie zadania. Dzięki pierwszemu wpisowi, po restarcie łączy się z odpowiednim VPNem, a drugi uruchamia minutę po restarcie powyższy skrypt.</p>
 <h3 id="zadania-cron">Zadania cron</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">@reboot sudo openvpn --config /etc/default/plik_vpn.ovpn
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">@reboot sudo openvpn --config /etc/default/plik_vpn.ovpn
 @reboot sleep <span class="m">60</span> <span class="o">&amp;&amp;</span> /usr/bin/python3 /root/Desktop/Skrypty/send_ip.py
 </code></pre></td></tr></table>
 </div>
@@ -923,7 +923,7 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 
 <script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/zzo.min.815b3fb123d050336929844ca1ba3dff615a7c7d331ebe919b787e0dafc1a8ac.js"></script>
+<script defer src="/js/zzo.min.565437c142a5dc240139b94bc297e780fff5096094d4942f33a1bf7424961555.js"></script>
 
 
   
@@ -1476,7 +1476,7 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
                     
 
                     
-                        ©2021, All Rights Reserved<a rel="license" href=""> Robert Lewandowski</a>
+                        ©2022, All Rights Reserved<a rel="license" href=""> Robert Lewandowski</a>
                     
                 
             </p>
