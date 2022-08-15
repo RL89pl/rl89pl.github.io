@@ -36,9 +36,9 @@ Trochę to czasu zajmuje, a gdyby to wszystko zastąpić wyłącznie komendą w 
         <description>Zdarza się, że potrzebujemy hasło do sieci wifi, do której się wcześniej logowaliśmy, by móc zalogować się np. w telefonie, ale nie pamiętamy hasła.
 Rozwiązanie pod Windowsa jest bardzo proste. Jedyne czego potrzebujemy to cmd.
 W terminalu wpisujemy poniższe polecenie:
-netsh wlan show profilesOtrzymamy listę zapisanych sieci:
+netsh wlan show profiles Otrzymamy listę zapisanych sieci:
 Następnie wpisujemy poniższe polecenie, gdzie zamiast NAZWA_SIECI podajemy interesującą nas sieć:
-netsh wlan show profiles name=NAZWA_SIECI key=clearNasze hasło zapisane jest pod Key Content:</description>
+netsh wlan show profiles name=NAZWA_SIECI key=clear Nasze hasło zapisane jest pod Key Content:</description>
       </item>
       
     

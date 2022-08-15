@@ -9,7 +9,7 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 16 Oct 2021 00:00:10 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2022 13:13:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,29 +17,38 @@
     
       
       <item>
-        <title>Django</title>
-        <link>https://rl89pl.github.io/pl/tags/django/</link>
-        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
+        <title>Automatyzacja</title>
+        <link>https://rl89pl.github.io/pl/tags/automatyzacja/</link>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/tags/django/</guid>
-        <description></description>
-      </item>
-      
-      <item>
-        <title>Python</title>
-        <link>https://rl89pl.github.io/pl/tags/python/</link>
-        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
-        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/tags/python/</guid>
+        <guid>https://rl89pl.github.io/pl/tags/automatyzacja/</guid>
         <description></description>
       </item>
       
       <item>
         <title>Produktywność</title>
         <link>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</link>
-        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/tags/produktywno%C5%9B%C4%87/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Python</title>
+        <link>https://rl89pl.github.io/pl/tags/python/</link>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/python/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Django</title>
+        <link>https://rl89pl.github.io/pl/tags/django/</link>
+        <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/tags/django/</guid>
         <description></description>
       </item>
       

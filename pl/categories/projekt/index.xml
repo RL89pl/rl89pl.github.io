@@ -24,7 +24,7 @@
         <guid>https://rl89pl.github.io/pl/posts/todo_0/</guid>
         <description>Dostępne aplikacje Używałem wielu aplikacji do planowania zadań i jeszcze więcej testowałem.
 Przykładowo w każdej można utworzyć listę zadań, np.:
- Zakup słuchawek Trening Sprzątanie piwnicy  W wielu z nich można także ustalić ile dane zadanie zajmie nam czasu i na podstawie tego planować dzień.
+Zakup słuchawek Trening Sprzątanie piwnicy W wielu z nich można także ustalić ile dane zadanie zajmie nam czasu i na podstawie tego planować dzień.
 Problem i rozwiązanie Nie przypominam sobie jednak, by jakakolwiek z nich miała opcję predefiniowanych podzadań.
 Oczywiście wiele z nich miało możliwość dodawania podzadań, ale trzeba je uzupełniać za każdym razem, gdy dodaje się główne zadanie.</description>
       </item>
@@ -46,7 +46,7 @@ Projekt Ogólne zasady:</description>
         <pubDate>Tue, 14 Jan 2020 16:38:49 +0100</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/posts/wersja_konsolowa/</guid>
-        <description>Wprowadzenie ganttsection Car ManagerSkrypt + baza danych :active, des1, 2020-01-14,2020-01-16Django : des2, after des1, 2dDesktop app : des3, after des2, 2dMobile app : des4, after des3, 2dCzas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.
+        <description>Wprowadzenie ganttsection Car ManagerSkrypt + baza danych :active, des1, 2020-01-14,2020-01-16Django : des2, after des1, 2dDesktop app : des3, after des2, 2dMobile app : des4, after des3, 2d Czas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.
 Baza danych w prostym SQlite.
 Repozytorium projektu: Car Manager
 Praca z bazą danych Przy uruchamianiu programu chcemy, aby pokazał się aktualny stan pojazdu.

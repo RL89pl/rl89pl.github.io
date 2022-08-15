@@ -306,7 +306,7 @@
 <meta property="og:url" content="https://rl89pl.github.io/pl/posts/wersja_konsolowa/">
 <meta property="og:type" content="article">
 
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://rl89pl.github.io/pl/posts/wersja_konsolowa/">
@@ -564,7 +564,6 @@ Skrypt + baza danych :active,    des1, 2020-01-14,2020-01-16
 Django        :  des2, after des1, 2d
 Desktop app   :         des3, after des2, 2d
 Mobile app   :         des4, after des3, 2d
-
 </code></pre><p>Czas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.<br />
 Baza danych w prostym SQlite.<br />
 Repozytorium projektu: <a href="https://github.com/RL89pl/car-manager">Car Manager</a></p>
@@ -587,17 +586,17 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">database</span> <span class="o">=</span> <span class="s2">&#34;carmng.db&#34;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">R_OK</span><span class="p">):</span>
-        <span class="c1">#jeżeli nie ma pliku, tworzy bazę danych z dwiema tabelami</span>
-        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-        <span class="n">create_table</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sqlite3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="o">=</span> <span class="s2">&#34;carmng.db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">R_OK</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#jeżeli nie ma pliku, tworzy bazę danych z dwiema tabelami</span>
+</span></span><span class="line"><span class="cl">        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">create_table</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Tworzymy tabelę w bazie przeznaczoną dla informacji o autach i odrębną o statystykach (tankowania, koszty, etc.):</p>
 <div class="highlight"><div class="chroma">
@@ -634,37 +633,37 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="n">connection</span><span class="p">):</span>
-    <span class="n">sql_create_car_table</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34; CREATE TABLE IF NOT EXISTS car (
-</span><span class="s2">                                        id integer PRIMARY KEY AUTOINCREMENT UNIQUE,
-</span><span class="s2">                                        nazwa text NOT NULL,
-</span><span class="s2">                                        marka text,
-</span><span class="s2">                                        rocznik text
-</span><span class="s2">                                    ); &#34;&#34;&#34;</span>
- 
-    <span class="n">sql_create_stats_table</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;CREATE TABLE IF NOT EXISTS stats (
-</span><span class="s2">                                    id integer PRIMARY KEY AUTOINCREMENT UNIQUE,
-</span><span class="s2">                                    data text,
-</span><span class="s2">                                    godzina text,
-</span><span class="s2">                                    licznik_km integer,
-</span><span class="s2">                                    cena numeric, 
-</span><span class="s2">                                    ilosc_litrow integer,
-</span><span class="s2">                                    koszt integer,
-</span><span class="s2">                                    do_pelna integer,
-</span><span class="s2">                                    car_id integer NOT NULL,
-</span><span class="s2">                                    FOREIGN KEY (car_id) REFERENCES car (id)
-</span><span class="s2">                                );&#34;&#34;&#34;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_create_car_table</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_create_stats_table</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
-            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sql_create_car_table</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34; CREATE TABLE IF NOT EXISTS car (
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                        id integer PRIMARY KEY AUTOINCREMENT UNIQUE,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                        nazwa text NOT NULL,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                        marka text,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                        rocznik text
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    ); &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="n">sql_create_stats_table</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;CREATE TABLE IF NOT EXISTS stats (
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    id integer PRIMARY KEY AUTOINCREMENT UNIQUE,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    data text,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    godzina text,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    licznik_km integer,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    cena numeric, 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    ilosc_litrow integer,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    koszt integer,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    do_pelna integer,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    car_id integer NOT NULL,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                    FOREIGN KEY (car_id) REFERENCES car (id)
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                );&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_create_car_table</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_create_stats_table</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Gdy baza już jest, wywołamy funkcję do odczytu danych z bazy, dla konkretnego auta:</p>
 <div class="highlight"><div class="chroma">
@@ -672,8 +671,8 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Teraz trzeba wyświetlić rekordy:</p>
 <div class="highlight"><div class="chroma">
@@ -702,29 +701,29 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from car&#34;&#34;&#34;</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
-        <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ilość rekordów:  &#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Id: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nazwa: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marka: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Rocznik: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-
-        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd odczytu danych z bazy&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
-            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from car&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ilość rekordów:  &#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Id: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nazwa: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marka: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Rocznik: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd odczytu danych z bazy&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Pokażemy sobie na tę chwilę wszystkie rekordy z tabeli ze statystykami dla podanego auta:</p>
 <div class="highlight"><div class="chroma">
@@ -732,8 +731,8 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Printujemy rekordy:</p>
 <div class="highlight"><div class="chroma">
@@ -765,38 +764,36 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">car_id</span><span class="p">)</span>
-        <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from stats WHERE car_id = </span><span class="si">{}</span><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car_id</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
-        <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Total rows are:  &#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Printing each row&#34;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Id: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Data: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Godzina: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Licznik KM: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cena: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ilość litrów: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Koszt: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Do pełna: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd odczytu danych z bazy&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
-            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">car_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from stats WHERE car_id = </span><span class="si">{}</span><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Total rows are:  &#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Printing each row&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Id: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Data: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Godzina: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Licznik KM: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cena: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ilość litrów: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Koszt: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Do pełna: &#34;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd odczytu danych z bazy&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="czyszczenie-ekranu">Czyszczenie ekranu</h3>
 <p>Dobrze byłoby czyścić ekran, dlatego dodam wpis (dla windowsa czyszczenie to <code>cls</code> pod linuxem <code>clear</code>):</p>
@@ -805,8 +802,8 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">clear</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">clear</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Teraz za każdym razem, gdy będę chciał wyczyścić ekran, wystarczy, że wpiszę:</p>
 <div class="highlight"><div class="chroma">
@@ -814,8 +811,8 @@ Jeżeli go nie ma, wywołujemy funkcję, która będzie tworzyła bazę danych:<
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">clear</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="wybieralne-menu">Wybieralne menu</h3>
 <p>Skoro mamy już rozpisane wyświetlanie, czas na dodawanie wpisów.<br />
@@ -848,31 +845,31 @@ Na początek wprowadzimy możliwość dodawania aut:</p>
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">):</span>
-    <span class="n">nazwa</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj nazwę auta: &#34;</span><span class="p">)</span>
-    <span class="n">marka</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj markę auta: &#34;</span><span class="p">)</span>
-    <span class="n">rocznik</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj rocznik auta: &#34;</span><span class="p">)</span>
-    
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;INSERT INTO `car`
-</span><span class="s2">                            (&#39;nazwa&#39;, &#39;marka&#39;, &#39;rocznik&#39;) 
-</span><span class="s2">                            VALUES 
-</span><span class="s2">                            (&#39;</span><span class="si">{}</span><span class="s2">&#39;,&#39;</span><span class="si">{}</span><span class="s2">&#39;,</span><span class="si">{}</span><span class="s2">)&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nazwa</span><span class="p">,</span> <span class="n">marka</span><span class="p">,</span> <span class="n">rocznik</span><span class="p">)</span>
-
-        <span class="n">count</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlite_insert_query</span><span class="p">)</span>
-        <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dodano wpis do bazy danych &#34;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd przy dodawaniu wpisu do bazy danych&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sqliteConnection</span><span class="p">):</span>
-            <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nazwa</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj nazwę auta: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">marka</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj markę auta: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rocznik</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj rocznik auta: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;INSERT INTO `car`
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            (&#39;nazwa&#39;, &#39;marka&#39;, &#39;rocznik&#39;) 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            VALUES 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            (&#39;</span><span class="si">{}</span><span class="s2">&#39;,&#39;</span><span class="si">{}</span><span class="s2">&#39;,</span><span class="si">{}</span><span class="s2">)&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nazwa</span><span class="p">,</span> <span class="n">marka</span><span class="p">,</span> <span class="n">rocznik</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlite_insert_query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dodano wpis do bazy danych &#34;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd przy dodawaniu wpisu do bazy danych&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">sqliteConnection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Skoro mamy już opcję dodania aut, to czas na opcję dodania wpisów:</p>
 <div class="highlight"><div class="chroma">
@@ -926,54 +923,54 @@ Na początek wprowadzimy możliwość dodawania aut:</p>
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">addStatDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">,</span><span class="n">auto</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">while</span> <span class="n">wybor_daty</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">data_dzis</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Wstawić dzisiejszą datę? T/N&#34;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;n&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;N&#34;</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj datę tankowania: &#34;</span><span class="p">)</span>
-            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">godzina</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj godzinę: &#34;</span><span class="p">)</span>
-    <span class="n">licznik_km</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj stan licznika kilometrów: &#34;</span><span class="p">)</span>
-    <span class="n">cena</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj cenę: &#34;</span><span class="p">))</span>
-    <span class="n">ilosc_litrow</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj ilość zatankowanego paliwa: &#34;</span><span class="p">))</span>
-    <span class="k">while</span> <span class="n">wybor_do_pelna</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">do_pelna</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Czy zatankowałeś do pełna? T/N&#34;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
-            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;n&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;N&#34;</span><span class="p">:</span>
-            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">koszt</span> <span class="o">=</span> <span class="n">cena</span> <span class="o">*</span> <span class="n">ilosc_litrow</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;INSERT INTO `stats`
-</span><span class="s2">                            (&#39;data&#39;, &#39;godzina&#39;, &#39;licznik_km&#39;, &#39;cena&#39;, &#39;ilosc_litrow&#39;, &#39;koszt&#39;, &#39;do_pelna&#39;, &#39;car_id&#39;) 
-</span><span class="s2">                            VALUES 
-</span><span class="s2">                            (&#39;</span><span class="si">{}</span><span class="s2">&#39;,&#39;</span><span class="si">{}</span><span class="s2">&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">)&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">godzina</span><span class="p">,</span> <span class="n">licznik_km</span><span class="p">,</span> <span class="n">cena</span><span class="p">,</span> <span class="n">ilosc_litrow</span><span class="p">,</span> <span class="n">koszt</span><span class="p">,</span><span class="n">do_pelna</span><span class="p">,</span> <span class="n">auto</span><span class="p">)</span>
-
-        <span class="n">count</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlite_insert_query</span><span class="p">)</span>
-        <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dodano wpis do bazy danych &#34;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">)</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd przy dodawaniu wpisu do bazy danych&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sqliteConnection</span><span class="p">):</span>
-            <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">addStatDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">,</span><span class="n">auto</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">wybor_daty</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data_dzis</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Wstawić dzisiejszą datę? T/N&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;n&#34;</span> <span class="ow">or</span> <span class="n">data_dzis</span> <span class="o">==</span> <span class="s2">&#34;N&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj datę tankowania: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_daty</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">godzina</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj godzinę: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">licznik_km</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj stan licznika kilometrów: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cena</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj cenę: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ilosc_litrow</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Podaj ilość zatankowanego paliwa: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">wybor_do_pelna</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_pelna</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Czy zatankowałeś do pełna? T/N&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;n&#34;</span> <span class="ow">or</span> <span class="n">do_pelna</span> <span class="o">==</span> <span class="s2">&#34;N&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">do_pelna</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor_do_pelna</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">koszt</span> <span class="o">=</span> <span class="n">cena</span> <span class="o">*</span> <span class="n">ilosc_litrow</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sqlite_insert_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;INSERT INTO `stats`
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            (&#39;data&#39;, &#39;godzina&#39;, &#39;licznik_km&#39;, &#39;cena&#39;, &#39;ilosc_litrow&#39;, &#39;koszt&#39;, &#39;do_pelna&#39;, &#39;car_id&#39;) 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            VALUES 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                            (&#39;</span><span class="si">{}</span><span class="s2">&#39;,&#39;</span><span class="si">{}</span><span class="s2">&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">)&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">godzina</span><span class="p">,</span> <span class="n">licznik_km</span><span class="p">,</span> <span class="n">cena</span><span class="p">,</span> <span class="n">ilosc_litrow</span><span class="p">,</span> <span class="n">koszt</span><span class="p">,</span><span class="n">do_pelna</span><span class="p">,</span> <span class="n">auto</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlite_insert_query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dodano wpis do bazy danych &#34;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Błąd przy dodawaniu wpisu do bazy danych&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">sqliteConnection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="konfiguracja-w-pliku-ini">Konfiguracja w pliku ini</h3>
 <p>Dobrym rozwiązaniem będzie dodanie domyślnych ustawień i wpływu na nie.<br />
@@ -991,14 +988,14 @@ Do funkcji dodawania auta, dam możliwość wyboru, czy wprowadzone auto ma być
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">domyslne_auto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Dodać jako auto domyślne?: &#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">domyslne_auto</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">domyslne_auto</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
-    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">][</span><span class="s1">&#39;CAR_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">lastrowid</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">configfile</span><span class="p">:</span>
-        <span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">configfile</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">domyslne_auto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Dodać jako auto domyślne?: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">domyslne_auto</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">domyslne_auto</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">][</span><span class="s1">&#39;CAR_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">lastrowid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">configfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">configfile</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Wpierw standardowo w main sprawdzę, czy jest plik <code>.ini</code> tak jak to było w przypadku bazy danych i wczytam ID dla domyślnego auta:</p>
 <div class="highlight"><div class="chroma">
@@ -1013,15 +1010,15 @@ Do funkcji dodawania auta, dam możliwość wyboru, czy wprowadzone auto ma być
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">conf</span> <span class="o">=</span> <span class="s2">&#34;config.ini&#34;</span>
-<span class="n">car_id</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">R_OK</span><span class="p">):</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
-    <span class="k">if</span> <span class="s1">&#39;DEFAULT&#39;</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
-        <span class="n">car_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">][</span><span class="s1">&#39;CAR_ID&#39;</span><span class="p">])</span>
-<span class="n">clear</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">conf</span> <span class="o">=</span> <span class="s2">&#34;config.ini&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">car_id</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">R_OK</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;DEFAULT&#39;</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">car_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEFAULT&#39;</span><span class="p">][</span><span class="s1">&#39;CAR_ID&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="wybieralne-menu-1">Wybieralne menu</h3>
 <p>By całość lepiej się prezentowała, dodamy menu wyboru poszczególnych opcji. <br />
@@ -1032,9 +1029,9 @@ Wykorzystamy w tym celu bibliotekę <a href="https://pypi.org/project/pick/">pic
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">pick</span> <span class="kn">import</span> <span class="n">pick</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pick</span> <span class="kn">import</span> <span class="n">pick</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Do fukcji main dopiszemu sobie kod dla menu:</p>
 <div class="highlight"><div class="chroma">
@@ -1091,57 +1088,57 @@ Wykorzystamy w tym celu bibliotekę <a href="https://pypi.org/project/pick/">pic
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
-    <span class="n">clear</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-    <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">while</span> <span class="n">wyjscie</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-
-        <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Wybierz rodzaj: &#39;</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ekran główny&#39;</span><span class="p">,</span><span class="s1">&#39;Dodaj wpis&#39;</span><span class="p">,</span><span class="s1">&#39;Auta&#39;</span><span class="p">,</span><span class="s1">&#39;Wyjście&#39;</span><span class="p">]</span>
-        <span class="n">option1</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">pick</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">)</span>
-            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
-            <span class="n">clear</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
-                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">addStatDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">,</span><span class="n">car_id</span><span class="p">)</span>
-            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
-            <span class="n">clear</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
-                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-            <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from car&#34;&#34;&#34;</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
-            <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-                <span class="n">dodaj_auto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Dodać auto?: &#34;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">dodaj_auto</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">dodaj_auto</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
-                    <span class="n">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
-            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
-            <span class="n">clear</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
-                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="c1">## po wszystkim</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
-            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="n">clear</span><span class="p">()</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">clear</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">wyjscie</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Wybierz rodzaj: &#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ekran główny&#39;</span><span class="p">,</span><span class="s1">&#39;Dodaj wpis&#39;</span><span class="p">,</span><span class="s1">&#39;Auta&#39;</span><span class="p">,</span><span class="s1">&#39;Wyjście&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">option1</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">pick</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">showStats</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">car_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">addStatDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">,</span><span class="n">car_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">select_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;SELECT * from car&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">records</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">showAuto</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dodaj_auto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Dodać auto?: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">dodaj_auto</span> <span class="o">==</span> <span class="s2">&#34;t&#34;</span> <span class="ow">or</span> <span class="n">dodaj_auto</span> <span class="o">==</span> <span class="s2">&#34;T&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">addAutoToDatabase</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wybor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Wciśnij &#39;Q&#39;, by wyjść, lub inny dowolny klawisz by przejść dalej...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;q&#34;</span> <span class="ow">or</span> <span class="n">wybor</span> <span class="o">==</span> <span class="s2">&#34;Q&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wyjscie</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">## po wszystkim</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="koniec-pierwszej-części">Koniec pierwszej części</h3>
 <p>Na tę chwilę tylko dodajemy wpisy i wyświetlamy je. Kolejnym krokiem będą obliczenia, które będą wykonywane na tych danych, a na koniec refaktoryzacja kodu.</p>
@@ -1483,7 +1480,7 @@ Wykorzystamy w tym celu bibliotekę <a href="https://pypi.org/project/pick/">pic
 
 <script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/zzo.min.565437c142a5dc240139b94bc297e780fff5096094d4942f33a1bf7424961555.js"></script>
+<script defer src="/js/zzo.min.848338e0e98c9cdf12141488bbb66e7d9c5e12bf6490b002280a28c9316621d7.js"></script>
 
 
   

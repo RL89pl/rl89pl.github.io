@@ -306,7 +306,7 @@
 <meta property="og:url" content="https://rl89pl.github.io/pl/posts/django_tips_0/">
 <meta property="og:type" content="article">
 
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://rl89pl.github.io/pl/posts/django_tips_0/">
@@ -594,21 +594,21 @@ Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hell
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
-<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
-
-
-<span class="nd">@register</span><span class="o">.</span><span class="n">simple_tag</span><span class="p">(</span><span class="n">takes_context</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">url_add</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">request</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">)</span>
-    <span class="n">get</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">kwarg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">get</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">kwarg</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">get</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">?&#34;</span>
-    <span class="n">path</span> <span class="o">+=</span> <span class="n">get</span><span class="o">.</span><span class="n">urlencode</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">path</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
+</span></span><span class="line"><span class="cl"><span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@register</span><span class="o">.</span><span class="n">simple_tag</span><span class="p">(</span><span class="n">takes_context</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">url_add</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">request</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">get</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">kwarg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">get</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">kwarg</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">get</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">?&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span> <span class="o">+=</span> <span class="n">get</span><span class="o">.</span><span class="n">urlencode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">path</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Użycie tagu</strong></p>
 <p>By użyć tagu <code>{% url_add %}</code>, musimy go zarejestrować na początku templatu</p>
@@ -619,8 +619,8 @@ Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hell
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>wstawiamy:</p>
 <div class="highlight"><div class="chroma">
@@ -628,8 +628,8 @@ Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hell
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url_add page=i %}&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Jeśli chcemy powiązać tag z formularzem, by np. łączyć zapytania z filtrowaniem, bądź sortowaniem, to podajemy tag w <code>form action</code>:</p>
 <div class="highlight"><div class="chroma">
@@ -637,8 +637,8 @@ Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hell
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% url_add %}&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% url_add %}&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Dzięki temu adres url może wyglądać następująco:</p>
 <pre tabindex="0"><code class="language-url" data-lang="url">https://moja-strona.pl/news/?category=3&amp;category=4&amp;page=2
@@ -986,7 +986,7 @@ Klikasz, by filtrować treść i chcesz przejść na kolejną stronę, a tu&hell
 
 <script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/zzo.min.565437c142a5dc240139b94bc297e780fff5096094d4942f33a1bf7424961555.js"></script>
+<script defer src="/js/zzo.min.848338e0e98c9cdf12141488bbb66e7d9c5e12bf6490b002280a28c9316621d7.js"></script>
 
 
   

@@ -24,7 +24,7 @@
         <guid>https://rl89pl.github.io/pl/notes/md2word/</guid>
         <description>By móc generować dokumenty Worda z MD, należy pobrać pandoc (LINUX).
 W terminalu wpisujemy poniższe polecenie:
-1  pandoc -o output.docx -f markdown -t docx filename.md   </description>
+1 pandoc -o output.docx -f markdown -t docx filename.md </description>
       </item>
       
     

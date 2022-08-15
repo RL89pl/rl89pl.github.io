@@ -306,7 +306,7 @@
 <meta property="og:url" content="https://rl89pl.github.io/pl/posts/raspberry_ip/">
 <meta property="og:type" content="article">
 
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://rl89pl.github.io/pl/posts/raspberry_ip/">
@@ -585,16 +585,16 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">netifaces</span> <span class="k">as</span> <span class="nn">ni</span>
-<span class="kn">import</span> <span class="nn">nexmo</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">nexmo</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;klucz&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;kod&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">ni</span><span class="o">.</span><span class="n">ifaddresses</span><span class="p">(</span><span class="s1">&#39;tap0&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-        <span class="n">adres</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;addr&#39;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">adres</span><span class="p">:</span>
-                <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">({</span><span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Raspberry&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">48123456789</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">adres</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;unicode&#39;</span><span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">netifaces</span> <span class="k">as</span> <span class="nn">ni</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">nexmo</span>
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">nexmo</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;klucz&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;kod&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">ni</span><span class="o">.</span><span class="n">ifaddresses</span><span class="p">(</span><span class="s1">&#39;tap0&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">adres</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;addr&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">adres</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">({</span><span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Raspberry&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">48123456789</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">adres</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;unicode&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Następnie dodaję do crona odpowiednie zadania. Dzięki pierwszemu wpisowi, po restarcie łączy się z odpowiednim VPNem, a drugi uruchamia minutę po restarcie powyższy skrypt.</p>
 <h3 id="zadania-cron">Zadania cron</h3>
@@ -604,9 +604,9 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">@reboot sudo openvpn --config /etc/default/plik_vpn.ovpn
-@reboot sleep <span class="m">60</span> <span class="o">&amp;&amp;</span> /usr/bin/python3 /root/Desktop/Skrypty/send_ip.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">@reboot sudo openvpn --config /etc/default/plik_vpn.ovpn
+</span></span><span class="line"><span class="cl">@reboot sleep <span class="m">60</span> <span class="o">&amp;&amp;</span> /usr/bin/python3 /root/Desktop/Skrypty/send_ip.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr />
 
@@ -923,7 +923,7 @@ Dzięki takiemu rozwiązaniu mogę z każdego miejsca na ziemi połączyć się 
 
 <script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/zzo.min.565437c142a5dc240139b94bc297e780fff5096094d4942f33a1bf7424961555.js"></script>
+<script defer src="/js/zzo.min.848338e0e98c9cdf12141488bbb66e7d9c5e12bf6490b002280a28c9316621d7.js"></script>
 
 
   

@@ -9,12 +9,21 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 06 Feb 2022 00:45:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2022 13:13:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Usprawnienia pracy</title>
+        <link>https://rl89pl.github.io/pl/series/usprawnienia-pracy/</link>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/series/usprawnienia-pracy/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>ToDo</title>

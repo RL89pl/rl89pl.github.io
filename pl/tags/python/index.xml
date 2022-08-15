@@ -9,12 +9,24 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 16 Oct 2021 00:00:10 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2022 13:13:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Usprawnienia i automatyzacja pracy w pracy - omówienie serii</title>
+        <link>https://rl89pl.github.io/pl/posts/usprawnienia_pracy_0/</link>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/posts/usprawnienia_pracy_0/</guid>
+        <description>Wprowadzenie Gdy pracuje się w firmie na danym stanowisku, czasem trudno zauważyć, że część z wykonywanych zadań można byłoby już nawet nie tyle co zautomatyzować, ale chociaż usprawnić.
+Ileż to razy wykonujemy coś, &amp;ldquo;bo tak zawsze było&amp;rdquo;?
+Segregator z dokumentami na najwyższym regale ustawiony i sięgamy do niego wchodząc na stołek kilka razy w tygodniu (albo i dziennie).
+Dlaczego zatem nie ustawić go niżej na wyciągnięcie ręki, dzięki czemu zaoszczędzimy trochę czasu, wysiłku, albo i ewentualnego upadku ze stołka?</description>
+      </item>
       
       <item>
         <title>Django - Quick Tips - Templatetags</title>
@@ -58,7 +70,7 @@ Trochę to czasu zajmuje, a gdyby to wszystko zastąpić wyłącznie komendą w 
         <pubDate>Tue, 14 Jan 2020 16:38:49 +0100</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/posts/wersja_konsolowa/</guid>
-        <description>Wprowadzenie ganttsection Car ManagerSkrypt + baza danych :active, des1, 2020-01-14,2020-01-16Django : des2, after des1, 2dDesktop app : des3, after des2, 2dMobile app : des4, after des3, 2dCzas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.
+        <description>Wprowadzenie ganttsection Car ManagerSkrypt + baza danych :active, des1, 2020-01-14,2020-01-16Django : des2, after des1, 2dDesktop app : des3, after des2, 2dMobile app : des4, after des3, 2d Czas na rozpoczęcie pracy nad pierwszą wersją aplikacji, wpierw konsolowej napisanej w Pythonie.
 Baza danych w prostym SQlite.
 Repozytorium projektu: Car Manager
 Praca z bazą danych Przy uruchamianiu programu chcemy, aby pokazał się aktualny stan pojazdu.

@@ -9,12 +9,21 @@
     <managingEditor>rl89pl@gmail.com (Robert Lewandowski)</managingEditor>
     <webMaster>rl89pl@gmail.com (Robert Lewandowski)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 06 Feb 2022 00:45:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2022 13:13:00 +0200</lastBuildDate>
     
         <atom:link href="https://rl89pl.github.io/pl/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Automatyzacja</title>
+        <link>https://rl89pl.github.io/pl/categories/automatyzacja/</link>
+        <pubDate>Mon, 15 Aug 2022 13:13:00 +0200</pubDate>
+        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
+        <guid>https://rl89pl.github.io/pl/categories/automatyzacja/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>Projekt</title>
@@ -31,15 +40,6 @@
         <pubDate>Sat, 16 Oct 2021 00:00:10 +0200</pubDate>
         <author>rl89pl@gmail.com (Robert Lewandowski)</author>
         <guid>https://rl89pl.github.io/pl/categories/django/</guid>
-        <description></description>
-      </item>
-      
-      <item>
-        <title>Automatyzacja</title>
-        <link>https://rl89pl.github.io/pl/categories/automatyzacja/</link>
-        <pubDate>Sun, 19 Jan 2020 01:55:00 +0100</pubDate>
-        <author>rl89pl@gmail.com (Robert Lewandowski)</author>
-        <guid>https://rl89pl.github.io/pl/categories/automatyzacja/</guid>
         <description></description>
       </item>
       
